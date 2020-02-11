@@ -88,7 +88,7 @@ function function1(z1, z2) {
 function1(10 , 25); //prints --> 250
 
 // 7. Undefined //
-/* Undefined means  that a value is not assigned. If a variable was declared, but never assigned,
+/* Undefined means that a value is not assigned. If a variable was declared, but never assigned,
 * then it's value will be undefined. 
 */
 
