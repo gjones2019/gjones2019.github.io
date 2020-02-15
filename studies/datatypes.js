@@ -1,181 +1,140 @@
-/* Data types
+/* 
+* Data types
 * 
-* 0. Javascript variables can hold a number of kinds of data types. The type is defined by the values that 
-* can be input and what operations can be performed on it. Data types are a cruical part of programming.
+* 0) There are many types of datawe deal with in javascript.
+*
+* // 1) Numbers 
+* Numbers are numerical data. They can be  positive, negative, have decimals, etc. Simple data type
 */
-// 1. Numbers //
-/* Numbers are simply numerical data. Numbers are a simply or primitive type of data. Numbers can 
-* be positive or negative or have decimals. I.e. -10000, .003, 1562 are all numnbers!
-*/
-var freshmanYearAge = 18; 
 
-// the number 18 is assigned to the freshmanYearAge to represent the age I was as a college freshman.
-console.log(freshmanYearAge); //prints --> 18
+var hsGrad = 2009; 
 
-// prints freshmanYearAge to the console 
+console.log(hsGrad); //prints --> 2009
 
-// 2. Strings
-/* Strings are any sequence of characters inside of quotes ("" or ''). The characters can be letters, 
-* symbols, or numbers. Strings are also simple data types. Strings have several methods that
-* they can be used with.
-*/
-var wishes = "I hope I'm a software engineer in 6 months!";
 
-//wishes wss assigned to a string that was consisted of numbers, letters, and a symbol.
+// 2) Strings
+// Strings are any kind of characted or text inside of quotes. Simple data type
 
-console.log(wishes); // prints --> "I hope I'm a software engineer in 6 months!"
 
-// 3. Boolean //
-/* Boolean data types are simple and consist of true or false values. These can be declared or done through
-* logic. 
-*/
-var t = 10;
-var v = 20;
+var thought = "I am tired of doing this studies project...";
 
-if (t < v) {
-    console.log('duh'); // prints --> "duh" if the t < v is true. 
+console.log(thought); // prints --> "I am tired of doing this studies project..."
+
+// 3) Boolean 
+//Simply put, these are true or false values. Simple data type
+
+if (1 < 2) {
+    console.log('ok'); // prints --> "ok" if the 1< 2 is true. 
 }
 else {
-    console.log('idk'); //prints --> "idk" if the if statement of t < v is false.
+    console.log('nice'); //prints --> "nice" if the if 1 < 2 is false.
 }
-// 4. Arrays //
-/* With the power of arrays, a single variable can store different elements. These are mainly
-* used for lists and ease of access. Arrays use bracket notation and indexing for access to it's elements
-*/
 
-var array = [];
-//creating an array literal
-array = [2, 4, 6, 'blue', 'you', false];
-// initialize and declare a variable for array
+// 4) Arrays 
+//Arrays are data inside of []. They are good to use for lists. Must use bracket notation for access. Complex data type. 
 
-console.log(array[3]);
-//prints --> blue
-/*we accessed the 4th element of the array with bracket notation and indexing.
-*/
-// 5. Object //
-/* Ojects are defined as an unordered collection of data, primitive data types, or copy by reference
-* data types. Format is: “key: value” pair. Objects are complex data types and can contain simple 
-* data types. Objects can use: bracket notation, dot notation, or key/value pairs for access to it's
-* key/value pairs.
-*/
+var arr = []; // array literal
+arr = ["cool", 5, 10, false]; //initialize/declare a variable
 
-var highSchool = {};
-//assigned an object literal 
+console.log(arr[1]); // prints --> 5
 
-highSchool = {
-    name : "Chamberlain Senior High SChool",
-    location : 'Tampa, Florida',
-    graduation : '2009'
+
+// 5) Object 
+// Objects are collections of data. Can be accessed using bracket or dot notation. Comple data type.
+
+
+var college = {}; //assign an object literal 
+
+college = {
+    name : "Xavier University of Louisiana",
+    where : 'New Orleans, Louisiana',
+    gradYear : '2014'
 };
 
-// We made a var named highSchool which was a object. Name, location, and grad year
-// are keys. 'Xavier University of Louisiana, 'New Orleans', and '2014' are the values. 
+console.log(college.gradYear); // prints --> 2014
 
-console.log(highSchool.name); // prints --> Chamberlain Senior High SChool
 
-//The key/value of name was accessed in our school object variable.
+// 6) Function 
+// Functions are resuable blocks of code. They have optional inputs and outputs. Complex data type.
 
-// 6. Function //
-/* Functions are very useful because they are blocks of code that accept various inputs, outputs, 
-* and return a new data value. Functions have a name, parameter(s) or arguement(s) for inputs, 
-* function body where the code is actually run, and a finally return statement for the output.
-* Parameters/arguements and even return statements are optional in functions. Functions are invoked 
-* or called using their declared name. 
-*/
-function function1(z1, z2) {
-  return z1 * z2;   // The function does the math and returns the product of the arguements/parameters
+function add(a1, a2) {
+  return a1 + a2;   
 }
-function1(10 , 25); //prints --> 250
+console.log(add(50 , 25)); //prints --> 75
 
-// 7. Undefined //
-/* Undefined means that a value is not assigned. If a variable was declared, but never assigned,
-* then it's value will be undefined. 
+// 7) Undefined 
+// When you see undefined it means something is not defined.
+
+var a; //a is declared but never assigned
+
+console.log(a); // prints --> undefined because it was never assigned to a value 
+
+// 8) Null //
+// Null means the value unknown or nothing. Simple data type.
+
+var height = null; // this just means that height is unknown
+
+console.log(height); //prints --> null
+
+// 9) NaN //
+/* Means there is a undefined numerical result. This can happen one of five ways:
+The first is 0 / 0, second is infinity / infinity, third is infinity * zero, fourth is with any operation where NaN in it, and
+the last is by changing a string that is not numberic or undefined to a specific number. Simple data type.
 */
 
-var s;
-//s has been declared but not assigned
+var not = 0 / 0;
 
-console.log(s); // prints --> undefined 
-//since s was never assigned, undefined was printed
+console.log(not); //prints => NaN
 
-// 8. Null //
-/* Null means “empty”, “value not known” or “nothing”.
+// 10) Infinity/-Infinity 
+/* Infinity is a number that exceeds 1.797693134862315E+308, aka the upper limit of 
+the floating point numbers. -Infinity is a number that exceeds -1.797693134862315E+308, aka the lower limit of 
+the floating point numbers. Simple complex type.
 */
 
-var weight = null;
-//this means that weight is unknown
+var lots = Infinity; 
 
-console.log(weight); //prints --> undefined, because a  null value is empty/unknown
+console.log(lots); // prints --> Infinity
 
-// 9. NaN //
-/* If a return value has an undefined numerical result then, NaN will be returned. NaN isn't a keyword. 
-* NaN can only occur are five ways; 1st: 0 / 0, 2nd: infinity / infinity, 3rd: infinity * zero, 
-* 4th: Any operation where NaN is a operand, 5th: Changing a string that is not numberic or undefined
-* to a number 
-*/
+var negLots = -Infinity;
 
-var notNum = 0 / 0; 
-// notNum shows a NaN moment
+console.log(negLots); //prints --> -Infinity
 
-console.log(notNum); 
-//prints --> NaN
-
-// 10. -Infinity and Infinity //
-/* Infinity is returned when a number exceeds 1.797693134862315E+308, this is the upper limit of 
-the floating point numbers. -Infinity is negative value of infinity.
-*/
-
-var tooMany = Infinity; 
-//assigns Infinity to tooMany
-
-console.log(tooMany); 
-//prints --> Infinity
-
-var tooLittle = -Infinity;
-//assigns -Infinity to tooLittle
-
-console.log(tooLittle); 
-// prints --> -Infinity
-
-// 11. Simple data types and Complex data types //
-/* Simple and complex data types are the two that we use in this class.
-* 
-* Simple data types are primitive or simples because they are immutable. This means that they do not 
-* collect or hold other values, and they always return more simple data types. Numbers, strings, boolean, 
-* NaN, undefined, and null are all simple data types.
+// 11) Simple and Complex data types 
+/* Primitive or simple data types are immutable. Meaning they don't collect/hold other values. They always return another primitive 
+data type(s). Simple types include: strings, numbers, NaN, null, undefined, and infinity/-infinity
 *
-* Complex data types take in other values. The are indefinite in size, aka mutable. Ojects, arrays, and 
-* functions are all complex data types.
+* Complex data types basically take in/hold/and allow other data types or values. They are mutable. Complex data types include:
+functions, arrays, and objects.
 */
 
 
-
-// 12. Copy by value and copy by reference //
+// 12) Copy by value vs by reference 
 /* Simple data types = copy by value. Copy by value means being copied from var to var. 
 * Complex data types = copy by reference. This means that they pass by reference when they are assigned or 
 * re-assigned.
 */
 
-// by value example
-var mom= "Gaynor"; // assigns Gaynor to mom
+// copy by value 
+var name= "Garrett"; 
 
-var first = mom; //assigns mom to first
+var myFirst = name; 
 
-mom = "Mrs. Jones"; //re-assigns Mrs. JOnes to the mom
+name = "Garrett Jones"; 
 
-console.log(mom); // prints --> Mrs. Jones
+console.log(name); // prints => Garrett Jones
 
-console.log(first); // prints --> Gaynor
+console.log(myFirst); // prints =>  Garrett
 
 
-//by reference example
-var uncle = {
-  first: "Fredro"
-}; //assigns key first and value Fredro to uncle object var
+// copyby reference 
+var mom = {
+  first: "Gaynor"
+};
 
-var who = uncle; // assigns value of myName to identity variable
+var love = mom; // assigns value of myName to identity variable
 
-uncle.first = "Collins"; // prints --> Collins
-console.log(uncle.first); //  prints --> Collins
+mom.first = "Mommy";
+console.log(mom.first); //  prints --> Mommy
 
-console.log(who.first); // Prints --> Collins
+console.log(love.first); // Prints --> Mommmy

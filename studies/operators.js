@@ -1,209 +1,132 @@
 /* Operators
-* 0. Operators are symbols used to perform specific actions such as mathematics.
+* 0) We use operator to perform operations and make our code easier to use. There are 6 types of operators:
+* comparison, logical, assignment, arithmetic, unary, and ternary.
 *
-* 1. There are 6 types of operators: assignment, arithmetic, comparison, logical,
-* unary, and ternary operators.
+* 1) Comparison
+* These operators compare data and resolve to a boolean T/F statement. There are two types: binary and strict.
 *
-* 2. Assignement
-* These assign values to the var to it's left based on the value of what is on it's right.
-*/
-// Regular Assignment //
-var e = 3;
-//assigned a value of 3 to e 
-var o = e; 
-//assigned var o to e
-console.log(o); 
-//prints --> 3
-
-// Addition //
-var cool = 3;
-cool += 4;
-//assigning the value of 4 to cool
-
-console.log(cool);  
-//prints --> 7
-
-// Subtraction //
-var thoughts = 3;
-thoughts -= 2;
-//subtracting 2 from thoughts
-
-console.log(thoughts); 
-//prints --> 1
-
-// Multiplication //
-var easy = 10;
-easy *= 3;
-//multiplying the value of 3 to easy
-
-console.log(easy); 
-//prints --> 30
-
-// Division //
-var sit = 100;
-sit /= 50;
-//dividing the value of 50 into sit
-
-console.log(sit); 
-//prints --> 2
-
-/* 3. Arithmetic 
-* 
-* These takenumberical values, do math, and return a single number value
-*/
-
-// Addition //
-var x = 1 + 34;
-
-// assigned x to the result of 1 + 34
-
-console.log(x);
-//prints --> 35
-
-// Subtraction //
-var q = 20 - 10;
-
-// assigned q to the result of 20 - 10
-
-console.log(q);
-//prints --> 10
-
-// Multiplication //
-var b = 90 * 1;
-
-// assigned o to the result of 90 * 1
-
-console.log(b);
-//prints --> 90
-
-// Division //
-var p = 50 / 5;
-
-// assigned p to the result of 50 / 5
-
-console.log(p);
-//prints --> 10
-
-// Remainder //
-var u = 10 % 4;
-
-//assigned u to the remainder of 10 and 4 or 10 % 4
-
-console.log(u); 
-//prints --> 2
-
-/* 4. Comparison
-* 
-* Comparison operators simply compare values and evaluate to a single T/F boolean value
+* // 1a) Binary
 */ 
-// 1) Binary Comparison //
+ //greater than 
+ console.log(1 > 2); // prints => false because 1 is not greater than 2
 
-//Greater than  > //
+ //less than
+ console.log(1 < 2); // prints => true because 1 is less than 2
 
-console.log(1 > 20);
+ //greater than or equal to
+ console.log(3 <= 3); //prints => true because 3 is equal to 3
 
-// prints --> false
+//less than or equal to
+console.log(23 <= 24); //prints => true because 23 is less than 24
 
-//Less than  < //
+ // 2) Strict comparison
+ 
+ //2a) strictly equal to 
+ console.log(100 === 100); //prints => true becaue 100 is the exact same as 100
+ 
+ //2b) strictly not equal to
+ console.log(5 !== 4); //prints => true because 5 is not the same as 4
+ 
+ /*
+ *
+ * // 3) Logical
+ * There are 4 types that we use: &&, ||, !!, and !.
+ */
+ // 3a) && means that both statements must be true for anything to happen
+ console.log(5 > 3 && 6 > 1); //prints => true because both logical statements are true
+ 
+ // 3b) || meants that only one of the statements must be true for anything to happen
+ console.log( 10 >= 10 || 1 > 1); //prints => true because one of the logical statements are true
+ 
+ // 3c) !! returns false for falsey values
+ console.log(!!NaN); // prints => false
+ 
+ // 3d) ! will change the truthiness of a value
+ console.log(!true); // prints => false
+ 
+ 
+ /* 4) Assignment
+ These operators assign the value to the right of the = sign to  what is on the left of it.
+ */
+ 
+ // traditional assignment
+var i = 0; //  assigned the value of 0 to the variable i
+var z = i; //assigne i to z
+console.log(z); //prints => 0
+ 
+ //addition assignment
+ var stalk = 0;
+ stalk += 1;
+ console.log(stalk); //prints => 1
+ 
+ //subtraction assignment
+ var think = 0;
+think -= 1;
+console.log(think); //prints => -1
+ 
+ //multiplication assignment
+ var walk = 2;
+ walk *= 2;
+ console.log(walk); //prints => 4
+ 
+ //division assignment
+var run = 10;
+run /= 5;
+console.log(run); //prints => 2
 
-console.log(-200 < 1);
-
-// prints --> true
-
-//Greater than or equal to >= //
-
-console.log(8 >= 4);
-
-// prints --> true
-
-//Less than or equal to <= //
-
-console.log(88 <= 8);
-
-// prints --> false
-
-// 2) Strict Comparison //
-
-// strictly equal //
-
-console.log(2000 === 20);
-//prints --> false
-
-// strictly not equal //
-
-console.log(4 !== 5);
-//prints --> true
-
-/* 5. Logical 
-*
-* && means that both of them have to be true
-* || means that only one has to be true
-* ! symbol flips the truthiness of the value given
-* !! will return false if the value is falsey (such as: null , 0, NaN, undefined, etc etc)
+/* 5) Arithmetic
+* These are basic mathematical operators that we use everyday in coding. Returns a numerical value.
 */
 
-// && //
+// Addition
+var w = 1 + 1;
+console.log(w); // prints => 2
 
-console.log(2 < 100 && 102 >= 2);
-//prints --> true
+//Subtraction
+var t = 1 - 1;
+console.log(t); // prints => 0
 
-// || //
+//Multiplication
+var p = 2 * 2;
+console.log(p); //prints => 4
 
-console.log(15 > 6 || 160 >= 1000);
-//prints --> true
+//Division
+var m = 5 / 5;
+console.log(m); //prints => 1
 
-// ! //
+//Remainder
 
-console.log(!false);
-//prints --> true
+var y = 10 / 8;
+console.log(y); //prints => 1.25
 
-// !! //
-
-console.log(!!null);
-//prints --> false
-
-/* 6. Unary
-* 
-* typeof: shows you the type of value  that you are dealing with
-* - : automatically will turn a value negative
-* ! : this is a bang operator and will do the opposite of or revers truthiness of a value
+/* 6) Unary
+Unary operators take one operand or argument and perform an operation. We mainly use 3 of them.
 */
 
-// typeof //
+// typeof 
+// Typeof will tell you what type of data you are handling or dealing with.
 
-var hatSize = 7.5;
+var myAge = 28;
+console.log(typeof(myAge)); // prints => "number"
 
-//my Hat size var
+// -
+//this operator turns values negative
 
-console.log(typeof(hatSize));
+var yourIQ = 100;
+console.log(-yourIQ); //prints => -100
 
-//prints --> number
+// !
+// this is a bang operator, and it will reverse the truthiness of a value that were working on
 
-// - // 
+console.log(!false); //prints => true
 
-var height = "5'9";
-//var for my height
 
-console.log(-height);
-//prints "-5'9" 
-
-// ! //
-
-console.log(!true);
-//prints --> false
-
-/* 7. Ternary 
-*
-* takes 3 operands
-* formatting: (x ? y : z) or (condition ? what to do if true : what to do if false)
+/* 7) Ternary 
+Takes in 3 operands. Very similar to conditional statements. 
+Syntax: (a ? b : c) represents (test condition ? if true, do this : if false, do this)
 */
-// ternary example //
 
-var yourAge = 18;
-//var for your age
+var sisterAge = 33;
+var alcohol = ((sisterAge >= 21) ? "She is old enough to buy it." : "She is not old enough to buy it.");
+console.log(alcohol); // prints => "She is old enough to buy it."
 
-var tobacco = (yourAge >= 21) ? "Yes you can buy" : "No you can't buy";
-//are you old enough to buy tobacco
-
-console.log(tobacco); 
-//prints --> No you can't buy because your age is < 21

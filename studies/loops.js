@@ -1,90 +1,81 @@
 /* 
-* Loops
-*
-* 0. Used to perform something over data, this can be done once or repeatedly. Loops allow us to 
-* execute code block any number of times. This is extremely handy when dealing with collections of data. 
-* Loops let you pull values out of collections and work with them, or use them, one at a time. 
-* 3 types of loops: 1st) For , 2nd) For-in , 3rd) While  
-*/
-// For //
-/* For loops have three parts: 1st) starting condition- where the loop begins, 2nd) stopping condition- where
-* the loop will stop based on boolean value, 3rd) an incrementer- which tells us how much will be 
-* moved per iteration.
-*/
+Loops
 
-for (var i = 0; i <= 5; i++) {
-    console.log(i); //prints --> 1, 2, 3, 4, 5
+1) We use loops to iterate over data repeatedly, executing code block in the process. There are 3 main types of loops:
+for, for-in, and while loops.
+*/
+// 2) For
+// Must have a starting condition, stopping condition, and an incrementer. Used for arrays or counting
+
+for (var i = 0; i < 3; i++) {
+    console.log(i); 
+} //prints => 1, 2, 3
+
+// 3) For-in
+//Used for  looping over objects
+
+var object = {Name : "Garrett", City : "New Orleans", Neighborhood : "Uptown"};
+
+for (var key in object) {
+    console.log(key); //prints => Name, City, Neighborhood
+    console.log(object[key]); //prints => Garrett, New Orleans, Uptown
 }
 
-// For-in //
-/* Use For-in loops to loop overthe properties of an object. This will extract the keys and/or values 
-* from an object. Uses bracket notation. 
-*/
+// 4) While
+//Code block will be executed while the condition is true. Incrementer is necessary to not get an infinite loop.
 
-var currentLocation = { City: 'N.O.', State: 'L.A.', County: "Jefferson" }; //creates object and assigns values
+var count = 10; // 
 
-for (var key in currentLocation) { 
-    console.log(key); // prints City, State, County
-    console.log(currentLocation[key]); // --> prints N.O., L.A., Jefferson
+while(count < 15) { //while count < 15
+    console.log(count); // prints --> 10, 11, 12, 13, 14
+    count++; // increment the count by +1 every loop
 }
 
-// While //
-/* While a condition is true, the loop will keep executing the code block. Must have an increment, otherwise
-* you will get an infinite loop.
-*/
 
-var counter = 1; // 
+// 5) Looping any number of time
 
-while(counter < 5) { //while counter < 10
-    console.log(counter); // prints --> 1, 2, 3, 4
-    counter++; // increment by +1
+for (var i = -1; i <= 5 ; i++) {
+    console.log(i); // prints --> -1, 0, 1, 2, 3, 4, 5
 }
 
-// Loop any # of times //
-var ok = [50, 2, 3, 4, 9, 1, 12];
+// 6) Forward counting 
 
-for (var i = 0; i < 5 ; i++) {// 5 is interchangeable for x
-    console.log(ok[i]); // prints --> 50, 2, 3, 4, 9
-}
-
-// Foward counting tolimit//
-
-function hiccups(limit){
-    for (var i = 1; i < limit; i +=1){
-        console.log(i + " hiccup"); // --> prints i + sheep
+function forward(stop){
+    for (var i = 1; i < stop; i +=1){
+        console.log(i + " free throw"); // --> prints i + free throw
     }
 }
 
-hiccups(3);  // prints --> 1 hiccup, 2 hiccup
+forward(5);  // prints --> 1 free throw, 2 free throw, 3 free throw, 4 free throw
 
-// Backward counting to 0//
+// 7) Backward counting
 
 
-for (var x = 5; x >= 1; x--){
-  console.log(x); // prints --> 5, 4, 3, 2, 1
+for (var y = 10; y >= 5; y--){
+  console.log(y); // prints --> 10, 9, 8, 7, 6, 5
 }
 
-// Loop forward over an array //
+// 8) Forward over an array 
 
-var array4 = [4, 2, 1]; //creates array to loop forward over
+var arr= [10, 8, 6, 4]; 
 
-for (var a = 0; a < array4.length; a++) {
-    console.log(array4[a]); // prints --> 4, 2, 1
+  for (var i = 0; i < arr.length; i++) {
+
+console.log(arr[i]); // prints --> 10, 8, 6, 4
 }
 
 // Loop backward over an array //
 
-var array = [7, 3, 5]; //creates array to loop backwards over
-for (var s = array.length-1; s > -1; s--) {
-    console.log(array[s]); // prints --> 5, 3, 7
+var arr2 = [50, 30, 27, 16, 8]; 
+  for (var a = arr2.length - 1; a >= 0; a--) {
+    console.log(arr2[a]); // prints --> 8, 16, 27, 30, 50
 }
 
 // Loop over a object //
 
-var myObj = {first: 'Gabrielle', last: 'Jones', Age: 33};
-// object to be looped over
+var lakers = {Best: 'LeBron', second: 'AD', Third: "Kuz"};
 
-for (var key in myObj) {
-    console.log(myObj[key]); // prints --> Gabrielle, Jones, 33
+  for (var key in lakers) {
+    
+    console.log(lakers[key]); // prints --> Lebron, AD, Kuz
 }
-

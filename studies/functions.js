@@ -1,88 +1,60 @@
 /* 
 * Functions
-*
-* 0. Functions are blocks of code that can be reused. Functions accept any input, output, and optionally can
-* returns a new value. Fourparts to a function: the name, arguements/parameter(s), function/code 
-* body, and a optional return statement.  
-* function name (arguement(s) {
-*               <body> 
-*               <body>
-*               return
-*               }
-*
-* 1. The first part of using a function is declaration. This is where we create a function. The second part 
-* is invoking the function so it can run, this is called calling a function.
-* 
-* 2. A arguement is var in the declaration of the function. This is what makes functions reusable and
-* universal.
-*
-*/
-
-// 3. Syntax
-function funct(a1, a2) {
+ 0) functions are resuable blocks of code. They have optional inputs and outputs. 
  
-  return a1 * a2;   // The function returns a1 * a2
+ 1) Syntax : function name (parameters) {
+   <code block>
+   return or console.log
+ }
+You can optionally assign a function to a variable. Parameters are the unnamed input values, arguements are parameters
+that have been giving a value. The function name is used to call the function when we want to run it.
+ */
+// 2) Example
+
+function subtract(x1, x2) {
+  return x2 - x1; //will return x2 - x1
 }
 
-console.log(funct(100, 2)); // prints --> 200 (100*2)
+console.log(subtract(2, 10)); //prints => 8
 
-// 4. Assigning
+/* 3) Scope
+Varialbes declared outside of a function are global scoped and can be accessed from inside of a function. But 
+variables declared inside of a function can't be accessed from outside of the function. Similarly, nested functions inside of functions can
+access the parent function variables, but not vica versa.
+*/
 
-var message = function(){ //assigns a function with no parameters to a variable message
+var x = 1; // this is a global scoped variable
+
+function easy() {
+  return  x / x;
+}
+console.log(easy()); // prints --> 1
+
+
+
+function fun(num) {
   
-  console.log("Que Pasa!");
-};
+  var z = 2;
+  return x + z + num;
 
-console.log(message);  // prints --> Que Pasa!
-
-/* 5. Function inputs are opitional arguements/parameters. Function outputs are optional
-* return statements or console.logs.
-*/
-
-function funt2(n1, n2) { //input parameters of n1 and n2
-
-    return n1 / n2;  // return statement n1 / n2 
 }
 
-console.log(funt2(100, 5)); //prints --> 20
+console.log(fun(1));  //prints --> 4
+//console.log(z); prints => undefined
 
-/* 6. Scope 
-* A variable that is declared on the outside of a function automatically belongs to the global scope. These 
-* variables are able to be accessed anywhere in your code. Every function has its own local/function scope.
-* A variable that is declared in that function is only able to be accessed inside that function and any function
-* inside of it.
+/* 4) Closures
+* Closures are the combo of a function that is enclosed together with references to its lexical environment.
+They let us have access to a outer function, but allows us to do this from inside an inner function.
 */
 
-var z = 8; // this is global scoped and can be accessed anywhere
-
-function cool() {
-  return z * z;
+function addition(x) {
+  return function(y) {
+    return x + y;
+  };
 }
 
-console.log(cool()); //prints --> 64
+var add1 = addition(10);
+var add2 = addition(10);
 
-// The code here can NOT use carName
-function newFunct2(stripecolor) {
-  
-  var brand = "Levi's";
-  return stripecolor + " " + brand;
-
-  // code here CAN use carName
-}
-
-console.log(newFunct2('Red stripe'));  //prints --> Red stripe Levi's
-
-/* 7. Closures
-* Closures are the combo of a function that is bundled together or enclosed with references to the function's 
-* lexical environment. Closures basically give access to an outer function's scope, but this 
-* is done from inside a inner function.
-*/
-var addIt = (function () {
-  var count = 2;
-  return function () {count += 1; return count}; //nested function using closures
-})(); //the function can still be accessed because we used closures
-
-console.log(addIt()); // prints --> 3
-console.log(addIt()); // prints --> 4
-console.log(addIt()); // prints --> 5
-
+console.log(add1(2)); // prints => 12
+console.log(add2(12)); //prints => 22

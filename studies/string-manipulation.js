@@ -1,91 +1,90 @@
 /* String Manipulation
 *
-* 0. Stings are manipulated using string methods or operators
+* 0) Strings can be altered and manipulated with methods and operators. I will go over some of my favorite string methods and a brief
+overview of operators.
 */
 
-// 1. String methods
-//There is a lot of string methods that are beneficial. For a full list, look at mozilla developer tools for a full list of them.
+// 1) String methods
+//String methods make our lives as developers a lot easier and simpler. There is a large list of methods that you can use and look at on
+// mozilla's developer website.
 
-// 1) Property Access // 
-// This is used to find a specific character in a string. You must use [].
+// 1a) Accessing the character aka property access
+// Using the [], you can access any character in a string.
 
-var lastName = 'Jones';
-// create a variable for  my lastName
-
-console.log(lastName[2]);
-// prints --> n
-
-// 2) slice() //
-/* Used to extract part of a string and return taht part in a new string. This method 
-* takes in 2 parameters: the first/start position, and an optional last/end position.
-*/
-
-var candy = "Skittles, Snickers, Twix";
-
-var favorite = candy.slice(10, 17); 
-
-console.log(favorite); // prints --> Snickers
-
-// 3) substring() //
-/* substring() is very similar to the slice() method. The only difference is that substring() cannot take in negative indexes as parameters.
-*/
-
-var vegetables = "Carrot, Lettuce, Onion";
-
-var ourFav = vegetables.substring(8, 14);
-
-console.log(ourFav); // prints --> Lettuce
-
-// 4) .toUpperCase() //
-// This method simply converts the text to uppercase.
-
-var greeting = "Que Pasa";       // String
-
-var intenseGreeting = greeting.toUpperCase();  // intenseGreeting is greeting converted to uppercase
-
-console.log(intenseGreeting); // prints --> QUE PASA!
-
-// 5) .toLowerCase() //
-// This method simply converts the text to lowercase.
-
-var relax = "Just Chill!";       // String
-
-var calmDown = relax.toLowerCase();  // calmDown is relax converted to lowercase
-
-console.log(calmDown); // prints --> Just Chill!
-
-// 6) concat() //
-// Concat is wonderful, because it can join two or more strings for you
-
-var word1 = "You're";
-
-var word2 = "Cool";
-
-var concatedText = word1.concat(" ", word2); //combines word1 and word2 and a  " " in between.
-
-console.log(concatedText); // prints "You're Cool"
-
-// 7) split() //
-// The split method splits a string into an array of strings. This is done by separating it into multiple substrings.
-
-var thoughts = 'I hope I win the lottery this week!';
-
-var separated = thoughts.split(' ');
-console.log(separated[5]); // prints --> lottery
+var school = 'Xavier University of Louisiana'; //my school var
 
 
-// 2. Operators
+console.log(school[5]);// prints --> r to the console
 
-// + or combination // 
 
-var one = 'What is';
-var two = 'Happening?';
-//create variables one and two
+// 1b) split() 
+// Split turns a string into an array of strings. Each one can be individually accessed.
 
-console.log(one + " " + two);
-//prints --> What is HappeningS?
+var sentence = "I am a true Laker fan"; //creates our sentence var
 
-// += //
+var splitSentence = sentence.split(" "); //splits the sentence into array of strings
 
-console.log(one += ' your name?');
-//prints --> What's your name?
+console.log(splitSentence[4]); //prints => "Laker" to the console
+
+
+// 1c) .toUpperCase()
+//This method capitalizes whatever it is used on. Extremely useful. Can be individual characters, or a whole string.
+
+var tableType = "oakwood"; //creates our tabletype var
+
+console.log(tableType[0].toUpperCase() + tableType.slice(1)); //prints => "Oakwood"
+
+
+// 1d) .toLowerCase()
+//This method lowercases whatever it is used on. Like toUpperCase, it can be used on a whole string or just individual characters.
+
+var bedSize = "King";
+
+console.log(bedSize[0].toLowerCase() + bedSize.slice(1)); //prints => 'king'
+
+
+// 1e) .slice()
+//We use slice to return a portion of a string in a new string. This is used to isolate portions of a string that we want to use.
+
+var stringy = "Let's go home early today!"; //creates stringy var
+
+console.log(stringy.slice(0, 13)); //prints => "Let's go home" to the console
+ 
+ 
+// 1f) .replace()
+// This method simply replaces a value in a string with another value.
+
+var help = "Please help me..."; //creates our help var string
+
+console.log(help.replace("me", "yourself")); //prints => "Please help yourself..."
+
+// 1g) concat()
+// Concat joins 2 or more strings using the + symbol. This is almost identical to the plus operator.
+
+var thought1 = "I don't like"; //creates our thought1 var string 
+
+var thought2 = "your attitude."; //creates our thought2 var string
+
+
+console.log(thought1 + " " + thought2); // prints => "I don't like your attitude."
+
+ 
+
+// 2) Operators
+
+//addition or combining
+//this is similar to concat and the plus operator 
+
+var p1 = 'Que pasa';  //creates our p1 string var
+var p2 = 'mi amigo?'; //creates our p2 string var
+
+
+console.log(p1 + " " + p2); //prints -->  "Que pasa mi amigo?"
+
+// addition assignment 
+//this assigns the value on the right of the = sign to the left 
+
+var num = 1; //creates num variable
+
+console.log(num += 2); // prints --> 3
+
