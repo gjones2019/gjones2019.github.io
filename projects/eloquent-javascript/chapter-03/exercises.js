@@ -4,10 +4,10 @@
 
 function min(num1, num2) {
 if (num1 < num2) {
-  return num1;
+  return num1; //if num1 is smaller it is returned
 }
 else {
-  return num2;
+  return num2; //if num2 is smaller it is returned
 }
 }
 
@@ -15,39 +15,36 @@ else {
 // isEven //////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function isEven(n) {
-if (isEven(n-2) == 1) {
+function isEven(num) {
+if (num % 2 === 0) { //if number is divisible by 2 and even then true is returnedd
   return true;
-} 
-else {
-  return false;
+} else {
+  return false; //otherwise false is returned
 }
 }
 
 
-/* num = Math.abs(num); //convert to absolute value to account for negative numbers
-    if (num === 0)
-        return true;
-    else if (num === 1)
-        return false;
-    else
-        return isEven(num - 2);
-*/
 
 ////////////////////////////////////////////////////////////////////////////////
 // countChars //////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function countChars() {
-
+function countChars(str, char) {
+  let count = 0; //creates counter to keep count
+  for (let i = 0; i < str.length; i++) {  //loops over the string
+    if (str[i] === char) { //if str[i] is = to char then we add 1 to the count
+    count += 1;
+    }
+  }
+  return count; //return final count
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 // countBs /////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function countBs() {
-
+function countBs(str) {
+  return countChars(str, "B"); //use previous function to count Bs in string
 }
 
 ////////////////////////////////////////////////////////////////////////////////

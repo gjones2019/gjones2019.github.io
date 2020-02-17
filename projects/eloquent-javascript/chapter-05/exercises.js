@@ -2,32 +2,50 @@
 // flatten /////////////////////////////////////////////////////////////////////
 // /////////////////////////////////////////////////////////////////////////////
 
-function flatten() {
-
+function flatten(arr) {
+  return arr.reduce((flat, current) => flat.concat(current),
+[]); //flattens an 2-d array into a single arryay
 }
 
 // /////////////////////////////////////////////////////////////////////////////
 // loop ////////////////////////////////////////////////////////////////////////
 // /////////////////////////////////////////////////////////////////////////////
 
-function loop() {
-
+function loop(value, test, update, body) {
+for (let i = value; test(i); i = update(i)) { //loops: starts at value, if passes the test the i updates and the body is run
+    body(i);
+  }
 }
 
 // /////////////////////////////////////////////////////////////////////////////
 // every ///////////////////////////////////////////////////////////////////////
 // /////////////////////////////////////////////////////////////////////////////
 
-function every() {
-
+function every(array, test) {
+  for (let i = 0; i < array.length; i++) { //loops over array
+  if(!test(array[i])) { //if array[i] doesn't pass test, then false is returned
+    return false;
+  }
+  }
+  return true; //otherwise true is returned
 }
 
 // /////////////////////////////////////////////////////////////////////////////
 // dominantDirection ///////////////////////////////////////////////////////////
 // /////////////////////////////////////////////////////////////////////////////
 
-function dominantDirection() {
-
+function dominantDirection(str) {
+  let scriptsArray = countBy(str, function(char){  //finds the char associated with thata string using the countBy function
+  let script = characterScript(char.codePointAt(0))  //finds unicode reference for char
+  if(script) {
+    return script.direction; //if there is a correct script then the script direction is returned
+  }
+  return null; //otherwise null is returned
+  });
+  scriptsArray.sort(function(a , b){ 
+    return b.count - a.count; //finally it sorts by subtracting b count from a count
+  });
+  return scriptsArray[0].name; //returns the first name in the scriptsArray
 }
 
 // /////////////////////////////////////////////////////////////////////////////
