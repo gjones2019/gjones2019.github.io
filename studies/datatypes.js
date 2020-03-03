@@ -1,7 +1,10 @@
 /* 
 * Data types
 * 
-* 0) There are many types of datawe deal with in javascript.
+* 0) There are many types of data the we deal with in javascript. Whenever we are dealing with writing or reading code, it will
+* involve datatypes. Each datatype is useful on different situations. There are two main types, simple/primitive and complex.
+* Datatypes are stored inside of variables, and allow us to operate on them. This is why datatypes are
+* a very important concept in Javascript.
 *
 * // 1) Numbers 
 * Numbers are numerical data. They can be  positive, negative, have decimals, etc. Simple data type
@@ -13,7 +16,9 @@ console.log(hsGrad); //prints --> 2009
 
 
 // 2) Strings
-// Strings are any kind of characted or text inside of quotes. Simple data type
+// Strings are any kind of characted or text inside of quotes. Simple data type. Characters in a string are stored
+// and accessed by their location in the string which is determined by the strings length starting at 1. Therefore,
+// you could accessed the 'a' in var name = "Garrett" by accessing the 2nd character in the string, i.e. name[2] = "a".
 
 
 var thought = "I am tired of doing this studies project...";
@@ -118,23 +123,23 @@ functions, arrays, and objects.
 // copy by value 
 var name= "Garrett"; 
 
-var myFirst = name; 
+var myFirst = name; //sets a new variable = to the original name
 
-name = "Garrett Jones"; 
+name = "Garrett Jones"; //copies over the original name variable
 
-console.log(name); // prints => Garrett Jones
+console.log(name); // prints => Garrett Jones bcus it is changed by the name re-assignment
 
-console.log(myFirst); // prints =>  Garrett
+console.log(myFirst); // prints =>  Garrett bcus it isn't changed by the name re-assignment
 
 
-// copyby reference 
+// copy by reference 
 var mom = {
   first: "Gaynor"
 };
 
 var love = mom; // assigns value of myName to identity variable
 
-mom.first = "Mommy";
-console.log(mom.first); //  prints --> Mommy
+mom.first = "Mommy"; //copies over any reference of first property key and changed the value
+console.log(mom.first); //  prints --> Mommy because we copied of the first property key in mom.
 
-console.log(love.first); // Prints --> Mommmy
+console.log(love.first); // Prints --> Mommy bcus the property key of first was copied over.

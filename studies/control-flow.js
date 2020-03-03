@@ -50,3 +50,7 @@ switch (mood) {
     default: //this case presents no matter what
     console.log("You must be happy, like me"); //prints --> "You must be happy, like me" */
 }
+
+// 5) Switch vs if-elseif-else
+// We would use switch statements when we want to compare multiple possible conditions of an expression. If we are going deep into 
+// branching, then switch statements would be easier to use and cleaner than multiple if statements or nested ifs.

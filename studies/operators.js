@@ -27,6 +27,10 @@ console.log(23 <= 24); //prints => true because 23 is less than 24
  //2b) strictly not equal to
  console.log(5 !== 4); //prints => true because 5 is not the same as 4
  
+ //2c) The main difference between strictly and loosely equal to, is that loosely equal to converts 
+ // the values into a common type before it makes the comparison. Strickly equal to does not do a conversion
+ // and does the comparison as is. Loosely equal to converts the value and determines likeness based on it.
+ 
  /*
  *
  * // 3) Logical

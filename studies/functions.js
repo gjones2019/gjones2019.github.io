@@ -1,14 +1,24 @@
 /* 
 * Functions
- 0) functions are resuable blocks of code. They have optional inputs and outputs. 
+ 0) functions are resuable blocks of code. They have optional inputs and outputs. Parameters are the names of the inputs, but once
+ used in a real function, parameters are called arguements. Functions do not have to have any input or output.
  
- 1) Syntax : function name (parameters) {
+ 1a) Syntax : function name (parameters) {
    <code block>
    return or console.log
  }
 You can optionally assign a function to a variable. Parameters are the unnamed input values, arguements are parameters
 that have been giving a value. The function name is used to call the function when we want to run it.
+ 
+ 1b) function expression syntax:
+ This is when you directly assign a variable to a function. No function name is needed since it is assigned to a variable.
+ 
+ var printName = function (name) {
+   console.log(name);
+ }
+ 
  */
+ 
 // 2) Example
 
 function subtract(x1, x2) {

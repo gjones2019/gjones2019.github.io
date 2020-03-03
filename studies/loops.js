@@ -7,22 +7,30 @@ for, for-in, and while loops.
 // 2) For
 // Must have a starting condition, stopping condition, and an incrementer. Used for arrays or counting
 
-for (var i = 0; i < 3; i++) {
+for (var i = 0; i < 4; i++) {
     console.log(i); 
-} //prints => 1, 2, 3
+} //prints => 0, 1, 2, 3
 
 // 3) For-in
-//Used for  looping over objects
+//Used for  looping over objects. Must be an object so you can input the key and object name into the loop syntax.
+//Syntax:
+// for (var propKey in objectName) {
+//  //code block to be executed
+// }
 
 var object = {Name : "Garrett", City : "New Orleans", Neighborhood : "Uptown"};
 
-for (var key in object) {
+for (var key in object) { //object is the object name and key is used to loop over all the keys in the object we are working on.
     console.log(key); //prints => Name, City, Neighborhood
     console.log(object[key]); //prints => Garrett, New Orleans, Uptown
 }
 
 // 4) While
 //Code block will be executed while the condition is true. Incrementer is necessary to not get an infinite loop.
+//Syntax:
+// while (condition) {
+//  // code block to be executed
+// }
 
 var count = 10; // 
 
